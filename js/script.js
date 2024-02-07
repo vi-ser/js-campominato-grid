@@ -32,6 +32,17 @@ difficultyEl.addEventListener("change",
 startButton.addEventListener("click",
     function () {
 
+        // rimuovo prima le classi della partita precedente (se ci sono)
+        gridElement.classList.remove("medium");
+        gridElement.classList.remove("hard");
+
+
+        // rimuovo griglia precedente (se c'è)
+        while (gridElement.firstChild) {
+            gridElement.removeChild(gridElement.firstChild);
+        }
+
+
         // dichiaro la dimensione della griglia
         let gridSize;
 
@@ -48,13 +59,16 @@ startButton.addEventListener("click",
             gridSize = 100;
         }
 
+
+
         // generazione griglia
         for (let i = 0; i < gridSize; i++) {
 
+            // in caso di difficoltà "medium"
             if (selectedValue == "medium") {
                 gridElement.classList.add("medium");
             }
-
+            // in caso di difficoltà "hard"
             if (selectedValue == "hard") {
                 gridElement.classList.add("hard");
             }
