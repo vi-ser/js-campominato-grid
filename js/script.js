@@ -68,15 +68,25 @@ startButton.addEventListener("click",
             if (selectedValue == "medium") {
                 gridElement.classList.add("medium");
             }
+
             // in caso di difficoltà "hard"
             if (selectedValue == "hard") {
                 gridElement.classList.add("hard");
             }
 
-
             // creo nuova cella
             const newCell = document.createElement("div");
             newCell.classList.add("square");
+
+            // in caso di difficoltà "medium"
+            if (selectedValue == "medium") {
+                newCell.classList.add("medium");
+            }
+
+            // in caso di difficoltà "hard"
+            if (selectedValue == "hard") {
+                newCell.classList.add("hard");
+            }
 
 
             // inserisco numero progressivo

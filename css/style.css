@@ -31,18 +31,18 @@
 }
 
 #grid {
-    width: 500px;
-    height: 500px;
+    width: 100vw;
+    aspect-ratio: 1 / 1;
 }
 
 #grid.medium {
-    width: 450px;
-    height: 450px;
+    width: 100vw;
+    aspect-ratio: 1 / 1;
 }
 
 #grid.hard {
-    width: 350px;
-    height: 350px;
+    width: 100vw;
+    aspect-ratio: 1 / 1;
 }
 
 .square {
@@ -50,13 +50,23 @@
     justify-content: center;
     align-items: center;
 
-    width: 50px;
-    height: 50px;
+    width: 10%;
+    aspect-ratio: 1 / 1;
     border: solid 1px #4AFFC1;
     color: #4AFFC1;
 
     cursor: pointer;
     user-select: none;
+}
+
+.square.medium {
+    width: calc(100% / 9);
+    aspect-ratio: 1 / 1;
+}
+
+.square.hard {
+    width: calc(100% / 7);
+    aspect-ratio: 1 / 1;
 }
 
 .square:hover {
@@ -72,4 +82,56 @@
 .square.square.active:hover {
     background-color: #4affc09e;
     color: #0F152B;
+}
+
+/* media query */
+
+/* small */
+@media screen and (min-width: 576px) {
+
+    #grid {
+        width: 80vw;
+    }
+
+    #grid.medium {
+        width: 80vw;
+    }
+
+    #grid.hard {
+        width: 80vw;
+    }
+
+}
+
+/* medium */
+@media screen and (min-width: 768px) {
+
+    #grid {
+        width: 60vw;
+    }
+
+    #grid.medium {
+        width: 60vw;
+    }
+
+    #grid.hard {
+        width: 60vw;
+    }
+}
+
+/* large */
+@media screen and (min-width: 992px) {
+
+    #grid {
+        width: 40vw;
+    }
+
+    #grid.medium {
+        width: 40vw;
+    }
+
+    #grid.hard {
+        width: 40vw;
+    }
+
 }
