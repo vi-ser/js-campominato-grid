@@ -13,15 +13,44 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 
 const gridElement = document.querySelector("#grid");
 const startButton = document.querySelector("#start");
+const difficultyEl = document.querySelector("#difficulty");
 
+// gestisco il cambio di livello di difficoltà
 
+let selectedValue = difficultyEl.value;
+
+console.log(selectedValue);
+
+difficultyEl.addEventListener("change",
+    function () {
+        // leggo il valore selezionato
+        selectedValue = difficultyEl.value;
+        console.log("Livello di difficoltà:", selectedValue);
+
+    }
+)
 
 startButton.addEventListener("click",
     function () {
-        // console.log("start");
+
+        // dichiaro la dimensione della griglia
+        let gridSize;
+
+        // gestisco i casi in base al livello di difficoltà
+        if (selectedValue == "easy") {
+            gridSize = 100;
+        }
+
+        else if (selectedValue == "medium") {
+            gridSize = 81;
+        }
+
+        else {
+            gridSize = 49;
+        }
 
         // generazione griglia
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < gridSize; i++) {
 
             // creo nuova cella
             const newCell = document.createElement("div");
@@ -47,3 +76,5 @@ startButton.addEventListener("click",
         }
     }
 )
+
+
