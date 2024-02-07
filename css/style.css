@@ -35,6 +35,16 @@
     height: 500px;
 }
 
+#grid.medium {
+    width: 450px;
+    height: 450px;
+}
+
+#grid.hard {
+    width: 350px;
+    height: 350px;
+}
+
 .square {
     display: flex;
     justify-content: center;
@@ -47,7 +57,6 @@
 
     cursor: pointer;
     user-select: none;
-
 }
 
 .square:hover {

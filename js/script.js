@@ -15,18 +15,17 @@ const gridElement = document.querySelector("#grid");
 const startButton = document.querySelector("#start");
 const difficultyEl = document.querySelector("#difficulty");
 
-// gestisco il cambio di livello di difficoltà
 
+// difficoltà di default su "easy"
 let selectedValue = difficultyEl.value;
-
 console.log(selectedValue);
 
+// gestisco il cambio di livello di difficoltà
 difficultyEl.addEventListener("change",
     function () {
         // leggo il valore selezionato
         selectedValue = difficultyEl.value;
         console.log("Livello di difficoltà:", selectedValue);
-
     }
 )
 
@@ -37,24 +36,34 @@ startButton.addEventListener("click",
         let gridSize;
 
         // gestisco i casi in base al livello di difficoltà
-        if (selectedValue == "easy") {
-            gridSize = 100;
-        }
-
-        else if (selectedValue == "medium") {
+        if (selectedValue == "medium") {
             gridSize = 81;
         }
 
-        else {
+        else if (selectedValue == "hard") {
             gridSize = 49;
+        }
+
+        else {
+            gridSize = 100;
         }
 
         // generazione griglia
         for (let i = 0; i < gridSize; i++) {
 
+            if (selectedValue == "medium") {
+                gridElement.classList.add("medium");
+            }
+
+            if (selectedValue == "hard") {
+                gridElement.classList.add("hard");
+            }
+
+
             // creo nuova cella
             const newCell = document.createElement("div");
             newCell.classList.add("square");
+
 
             // inserisco numero progressivo
             newCell.innerText = [i + 1];
