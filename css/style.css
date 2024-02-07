@@ -2,6 +2,18 @@
     height: 80px;
 }
 
+#start:hover {
+    background-color: #4AFFC1;
+    color: #0F152B;
+    transition: ease .3s;
+}
+
+#start:not(:hover) {
+    background-color: #0F152B;
+    color: #4AFFC1;
+    transition: ease .3s;
+}
+
 .my_bgblue {
     background-color: #0F152B;
 }
@@ -39,7 +51,6 @@
 }
 
 .square:hover {
-    transition: ease 0.3s;
     background-color: white;
     color: #0F152B;
 }
@@ -50,7 +61,6 @@
 }
 
 .square.square.active:hover {
-    transition: ease 0.3s;
-    background-color: white;
+    background-color: #4affc09e;
     color: #0F152B;
 }
